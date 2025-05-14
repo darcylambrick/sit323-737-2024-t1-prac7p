@@ -41,8 +41,8 @@ Apply the following Kubernetes files:
 
 ```bash
 kubectl apply -f mongo-secret.yaml
-kubectl apply -f crud-app-deployment.yaml
-kubectl apply -f crud-app-service.yaml
+kubectl apply -f app-deployment.yaml
+kubectl apply -f service.yaml
 ```
 
 > Update your `crud-app-deployment.yaml` to use your Docker image and `MONGO_URI` secret.
@@ -70,7 +70,7 @@ http://localhost:3000
 ```bash
 docker build -t darcylambrick/crud-app .
 docker push darcylambrick/crud-app
-kubectl rollout restart deployment crud-app-deployment
+kubectl rollout restart deployment crud-app
 ```
 
 ---
